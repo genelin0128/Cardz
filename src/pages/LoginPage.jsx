@@ -28,7 +28,7 @@ const LoginPage = () => {
             <Header />
             <Container style={{ height: 'calc(100vh - 75px)' }}>
                 <Row>
-                    <Col lg={6}
+                    <Col xs={12} md={6}
                          style={{
                              borderLeft: '2px solid #c9f5ff',
                              borderRight: '1px solid #c9f5ff',
@@ -41,7 +41,7 @@ const LoginPage = () => {
                             <RenderHotPosts />
                         </Row>
                     </Col>
-                    <Col lg={6}
+                    <Col xs={12} md={6}
                          style={{
                              borderLeft: '1px solid #c9f5ff',
                              borderRight: '2px solid #c9f5ff',

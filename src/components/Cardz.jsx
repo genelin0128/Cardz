@@ -34,38 +34,38 @@ const Cardz = ({ post }) => {
     }
 
     return (
-        <Container className='py-3' style={{width: '550px'}}>
+        <Container fluid className='py-3' style={{maxWidth: '550px'}} >
             <Row className='align-items-center shadow-sm py-2' onClick={handleCardzModalOpen} style={{borderRadius: '10px', backgroundColor:'#c9f5ff'}} >
-                <Col lg={7}>
+                <Col xs={7} md={12} lg={7}>
                     <Row className='align-items-center'>
-                        <Col lg={3}>
+                        <div className='d-flex align-items-center gap-1'>
                             <AvatarInCardz
                                 avatarImage={avatarImage}
                                 userId={post.postUserId}
                             />
-                        </Col>
-                        <Col lg={9}>
-                            <Row>
-                                <Col lg={4}>
-                                    <p className='m-0 py-1 fw-bold' style={{ fontSize: '1rem' }}>{post.postUsername}</p>
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col>
-                                    <p
-                                        className='text-mutedx m-0'
-                                        style={{
-                                            fontSize: '0.6rem',
-                                            whiteSpace: 'nowrap',
-                                            overflow: 'hidden',
-                                            textOverflow: 'ellipsis'
-                                        }}
-                                    >
-                                        {post.postUserStatus}
-                                    </p>
-                                </Col>
-                            </Row>
-                        </Col>
+                            <Col xs={9} lg={9}>
+                                <Row>
+                                    <Col>
+                                        <p className='m-0 py-1 fw-bold' style={{ fontSize: '1rem' }}>{post.postUsername}</p>
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col>
+                                        <p
+                                            className='text-mutedx m-0 pe-2'
+                                            style={{
+                                                fontSize: '0.6rem',
+                                                whiteSpace: 'nowrap',
+                                                overflow: 'hidden',
+                                                textOverflow: 'ellipsis'
+                                            }}
+                                        >
+                                            {post.postUserStatus}
+                                        </p>
+                                    </Col>
+                                </Row>
+                            </Col>
+                        </div>
                     </Row>
                     <Row>
                         <Col>
@@ -76,30 +76,52 @@ const Cardz = ({ post }) => {
                     </Row>
                 </Col>
 
-                <Col lg={5}>
-                    <Row className='align-items-center justify-content-between'>
-                        <Col lg={9} className='d-flex justify-content-end p-0'>
+                <Col xs={5} md={12} lg={5}>
+                    <Row>
+                        <Col xs={10} lg={9} className='p-0 m-0 d-flex justify-content-center'
+                        >
                             <ImageSlider images={images} />
                         </Col>
-                        <Col lg={3}>
-                            <Row>
-                                <Button variant='link' className='my-2 p-1'>
-                                    <BsArrowUpCircle size={18} />
-                                </Button>
-                            </Row>
-                            <Row>
-                                <Button variant='link' className='my-2 p-1'>
-                                    <BsChat size={18} />
-                                </Button>
-                            </Row>
-                            <Row>
-                                <Button variant='link' className='my-2 p-1'>
-                                    <BsSend size={18} />
-                                </Button>
-                            </Row>
+                        <Col xs={2} lg={3} className='d-flex flex-column align-items-center justify-content-around'
+                        >
+                            <Button variant='link'>
+                                <BsArrowUpCircle size={18}/>
+                            </Button>
+                            <Button variant='link'>
+                                <BsChat size={18}/>
+                            </Button>
+                            <Button variant='link'>
+                                <BsSend size={18}/>
+                            </Button>
                         </Col>
                     </Row>
                 </Col>
+
+
+                {/*<Col xs={12} md={5}>*/}
+                {/*    <Row className='align-items-center justify-content-between'>*/}
+                {/*        <Col xs={9} md={9} className='d-flex justify-content-end p-0'>*/}
+                {/*            <ImageSlider images={images} />*/}
+                {/*        </Col>*/}
+                {/*        <Col xs={3} md={3}>*/}
+                {/*            <Row>*/}
+                {/*                <Button variant='link' className='my-2 p-1'>*/}
+                {/*                    <BsArrowUpCircle size={18} />*/}
+                {/*                </Button>*/}
+                {/*            </Row>*/}
+                {/*            <Row>*/}
+                {/*                <Button variant='link' className='my-2 p-1'>*/}
+                {/*                    <BsChat size={18} />*/}
+                {/*                </Button>*/}
+                {/*            </Row>*/}
+                {/*            <Row>*/}
+                {/*                <Button variant='link' className='my-2 p-1'>*/}
+                {/*                    <BsSend size={18} />*/}
+                {/*                </Button>*/}
+                {/*            </Row>*/}
+                {/*        </Col>*/}
+                {/*    </Row>*/}
+                {/*</Col>*/}
             </Row>
 
 

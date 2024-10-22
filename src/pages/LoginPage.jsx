@@ -36,7 +36,7 @@ const LoginPage = () => {
                              overflowY: 'auto'
                          }}
                     >
-                        <Row>
+                        <Row className='justify-content-center'>
                             <HotPostsHeader />
                             <RenderHotPosts />
                         </Row>

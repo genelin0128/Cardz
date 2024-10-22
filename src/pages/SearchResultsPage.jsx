@@ -8,7 +8,7 @@ import {useSelector} from "react-redux";
 import SearchPostResultsHeader from "../components/SearchPostResultsHeader";
 import RenderSearchPosts from "../components/RenderSearchPosts";
 import SearchUserResultsHeader from "../components/SearchUserResultsHeader";
-import RenderSearchProfile from "../components/RenderSearchProfile";
+import RenderSearchUsers from "../components/RenderSearchUsers";
 
 const SearchResultsPage = () => {
 
@@ -20,7 +20,7 @@ const SearchResultsPage = () => {
             {isLoggedIn === true ? (
                 <Container>
                     <Row>
-                        <Col lg={6}
+                        <Col xs={12} md={6}
                              style={{
                                  borderLeft: '2px solid #c9f5ff',
                                  borderRight: '1px solid #c9f5ff',
@@ -28,12 +28,12 @@ const SearchResultsPage = () => {
                                  overflowY: 'auto'
                              }}
                         >
-                            <Row>
+                            <Row className='justify-content-center'>
                                 <SearchPostResultsHeader />
                                 <RenderSearchPosts />
                             </Row>
                         </Col>
-                        <Col lg={6}
+                        <Col xs={12} md={6}
                              style={{
                                  borderLeft: '1px solid #c9f5ff',
                                  borderRight: '2px solid #c9f5ff',
@@ -41,9 +41,9 @@ const SearchResultsPage = () => {
                                  overflowY: 'auto'
                              }}
                         >
-                            <Row>
+                            <Row className='justify-content-center'>
                                 <SearchUserResultsHeader />
-                                <RenderSearchProfile />
+                                <RenderSearchUsers />
                             </Row>
                         </Col>
                     </Row>

@@ -64,44 +64,41 @@ const Profile = () => {
     return (
         <Container className='pt-5 pb-3'>
             <Row className='align-items-center'>
-                <Col xxl={2} lg={2} xs={2} className='ms-4'>
+                <div className='d-flex flex-column flex-sm-row align-items-center gap-3'>
                     <Image
                         src={avatarImage}
                         roundedCircle
-                        width='200'
-                        height='200'
+                        width='180'
+                        height='180'
                         className='border'
                         alt='avatar'
                         onClick={handleAvatarOpen}
                     />
-                </Col>
-                <Col xxl={8} lg={8} xs={8} className='align-items-center ms-4'>
-                    <Row className='justify-content-start my-2'>
-                        <Col xs='auto'>
-                            <Button variant='outline-primary'>Cardz</Button>
-                        </Col>
-                        <Col xs='auto'>
-                            <Button variant='outline-primary'>Followers</Button>
-                        </Col>
-                        <Col xs='auto'>
-                            <Button variant='outline-primary'>Following</Button>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <p className='fs-2 my-2'><strong>{username}</strong></p>
-                    </Row>
-                    <Row className="g-0">
-                        <Col xs="auto">
-                            <div
-                                className="px-2 py-1"
-                                style={{ borderRadius: '5px', backgroundColor: '#c9f5ff', cursor: 'pointer',}}
-                                onClick={handleStatusOpen}
-                            >
-                                <p className='text-muted fs-5 mb-0'>{currentStatus || 'Enter your status'}</p>
-                            </div>
-                        </Col>
-                    </Row>
-                </Col>
+
+                    <Col className='align-items-center w-100 px-2'>
+                        <Row className='justify-content-start'>
+                            <Col className='d-flex gap-4'>
+                                <Button variant='outline-primary'>Cardz</Button>
+                                <Button variant='outline-primary'>Followers</Button>
+                                <Button variant='outline-primary'>Following</Button>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <p className='fs-2 my-2'><strong>{username}</strong></p>
+                        </Row>
+                        <Row className="g-0">
+                            <Col xs="auto">
+                                <div
+                                    className="px-2 py-1"
+                                    style={{borderRadius: '5px', backgroundColor: '#c9f5ff', cursor: 'pointer',}}
+                                    onClick={handleStatusOpen}
+                                >
+                                    <p className='text-muted fs-5 mb-0'>{currentStatus || 'Enter your status'}</p>
+                                </div>
+                            </Col>
+                        </Row>
+                    </Col>
+                </div>
             </Row>
 
             {/*For avatar*/}

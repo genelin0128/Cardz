@@ -59,7 +59,7 @@ const RenderHotPosts = () => {
 
     return hotPosts.map((post, index) => (
         <Row key={`post-${index}`} className='justify-content-center'>
-            <Col lg={10} sm={12} className='p-0'>
+            <Col sm={11} className='p-0'>
                 <Cardz post={post} />
             </Col>
         </Row>

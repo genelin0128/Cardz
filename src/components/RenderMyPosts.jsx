@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import Cardz from "./Cardz";
 import {useDispatch, useSelector} from "react-redux";
 import {setMyPosts} from "../slices/postsSlice";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 
 const RenderMyPosts = () => {
     const dispatch = useDispatch();
@@ -48,13 +50,13 @@ const RenderMyPosts = () => {
     }, [avatar, username, status]);
 
     return (
-        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+        <Row className='justify-content-center'>
             {myPosts.map((post, index) => (
-                <div key={index} style={{ flex: '0 1 48%', margin: '1%' }}>
+                <Col key={index} xs={12} md={6} className="mb-2">
                     <Cardz post={post} />
-                </div>
+                </Col>
             ))}
-        </div>
+        </Row>
     );
 }
 

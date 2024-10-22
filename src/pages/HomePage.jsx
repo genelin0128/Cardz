@@ -21,7 +21,7 @@ const HomePage = () => {
             {isLoggedIn === true ? (
                 <Container>
                     <Row>
-                        <Col lg={6}
+                        <Col xs={12} md={6}
                              style={{
                                  borderLeft: '2px solid #c9f5ff',
                                  borderRight: '1px solid #c9f5ff',
@@ -29,12 +29,12 @@ const HomePage = () => {
                                  overflowY: 'auto'
                              }}
                         >
-                            <Row>
+                            <Row className='justify-content-center'>
                                 <HotPostsHeader />
                                 <RenderHotPosts />
                             </Row>
                         </Col>
-                        <Col lg={6}
+                        <Col xs={12} md={6}
                              style={{
                                  borderLeft: '1px solid #c9f5ff',
                                  borderRight: '2px solid #c9f5ff',
@@ -42,7 +42,7 @@ const HomePage = () => {
                                  overflowY: 'auto'
                              }}
                         >
-                            <Row>
+                            <Row className='justify-content-center'>
                                 <FollowingHeader/>
                                 <RenderFollowingPosts />
                             </Row>

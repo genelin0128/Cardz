@@ -35,34 +35,34 @@ const UserProfileCardz = ({ userId }) => {
     return (
         <Container className="my-3 py-2" style={{borderRadius: '10px', backgroundColor:'#c9f5ff', maxWidth: '550px'}} >
             <Row className='align-items-center'>
-                <Col lg={3}>
+                <div className='d-flex align-items-center gap-1'>
                     <AvatarInCardz
                         avatarImage={avatar}
                         userId={userData.userId}
                     />
-                </Col>
-                <Col lg={9}>
+                    <Col xs={9} lg={9}>
                     <Row>
-                        <Col lg={4}>
-                            <p className='m-0 py-1 fw-bold' style={{ fontSize: '1rem' }}>{userData.username}</p>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col>
-                            <p
-                                className='text-mutedx m-0'
-                                style={{
-                                    fontSize: '0.6rem',
-                                    whiteSpace: 'nowrap',
-                                    overflow: 'hidden',
-                                    textOverflow: 'ellipsis'
-                                }}
-                            >
-                                {userData.userStatus}
-                            </p>
-                        </Col>
-                    </Row>
-                </Col>
+                            <Col lg={4}>
+                                <p className='m-0 py-1 fw-bold' style={{ fontSize: '1rem' }}>{userData.username}</p>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                <p
+                                    className='text-mutedx m-0 pe-2'
+                                    style={{
+                                        fontSize: '0.6rem',
+                                        whiteSpace: 'nowrap',
+                                        overflow: 'hidden',
+                                        textOverflow: 'ellipsis'
+                                    }}
+                                >
+                                    {userData.userStatus}
+                                </p>
+                            </Col>
+                        </Row>
+                    </Col>
+                </div>
             </Row>
         </Container>
     );

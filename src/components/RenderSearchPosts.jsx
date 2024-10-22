@@ -66,7 +66,7 @@ const RenderSearchPosts = () => {
     if (searchPosts.length === 0) {
         return (
             <Row className="justify-content-center mt-4">
-                <Col lg={10} className="text-center">
+                <Col lg={10} sm={12} className="text-center">
                     <h4>No matched post found for "{searchQuery}"</h4>
                 </Col>
             </Row>

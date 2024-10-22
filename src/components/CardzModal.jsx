@@ -55,49 +55,49 @@ const CardzModal = ({ show, handleClose, avatarImage, username, userId, images, 
             >
                 <Container>
                     <Row className='align-items-center'>
-                        <Col lg={1} className='p-0'>
+                        <div className='d-flex align-items-center gap-1'>
                             <AvatarInCardz
                                 avatarImage={avatarImage}
                                 userId={userId}
                             />
-                        </Col>
-                        <Col lg={10}>
-                            <Row>
-                                <Col lg={4}>
-                                    <p className='m-0 py-1 fw-bold' style={{ fontSize: '1.3rem' }}>{username}</p>
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col>
-                                    <p
-                                        className='text-mutedx m-0'
+                            <Col xs={9} lg={10}>
+                                <Row>
+                                    <Col lg={4}>
+                                        <p className='m-0 py-1 fw-bold' style={{fontSize: '1.3rem'}}>{username}</p>
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col>
+                                        <p
+                                            className='text-mutedx m-0 pe-2'
+                                            style={{
+                                                fontSize: '0.8rem',
+                                                whiteSpace: 'nowrap',
+                                                overflow: 'hidden',
+                                                textOverflow: 'ellipsis'
+                                            }}
+                                        >
+                                            {status}
+                                        </p>
+                                    </Col>
+                                </Row>
+                            </Col>
+                            {(belongToUser) && (
+                                <Col lg={1} className='d-flex justify-content-center'>
+                                    <Button
+                                        variant='link'
+                                        onClick={handleShowEditAndDeleteBtnInCardzModal}
                                         style={{
-                                            fontSize: '0.8rem',
-                                            whiteSpace: 'nowrap',
-                                            overflow: 'hidden',
-                                            textOverflow: 'ellipsis'
+                                            display: 'flex',
+                                            justifyContent: 'center',
+                                            alignItems: 'center'
                                         }}
                                     >
-                                        {status}
-                                    </p>
+                                        <BsThreeDotsVertical size={20}/>
+                                    </Button>
                                 </Col>
-                            </Row>
-                        </Col>
-                        {(belongToUser) && (
-                            <Col lg={1} className='d-flex justify-content-center'>
-                                <Button
-                                    variant='link'
-                                    onClick={handleShowEditAndDeleteBtnInCardzModal}
-                                    style={{
-                                        display: 'flex',
-                                        justifyContent: 'center',
-                                        alignItems: 'center'
-                                    }}
-                                >
-                                <BsThreeDotsVertical size={20}/>
-                                </Button>
-                            </Col>
-                        )}
+                            )}
+                        </div>
                     </Row>
 
                     <Row className='p-1'></Row>

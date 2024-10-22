@@ -1,12 +1,11 @@
 import Header from '../components/Header';
 import Profile from '../components/Profile';
-import Cardz from '../components/Cardz';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import {useSelector} from "react-redux";
 import UnauthorizedAccessPage from "./UnauthorizedAccessPage";
-import React, {useEffect, useState} from "react";
+import React from "react";
 import NewPostButton from "../components/NewPostButton";
 import RenderMyPosts from "../components/RenderMyPosts";
 

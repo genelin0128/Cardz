@@ -70,109 +70,125 @@ const Header = () => {
         setSearchQuery(e.target.value);
     };
 
+    const searchContainerStyle = {
+        flex: 1,
+        marginLeft: 0,
+        '@media (min-width: 768px)': {
+            marginLeft: '100px'
+        }
+    }
 
     return (
-        <Navbar expand='md' bg='primary' variant='dark' sticky="top" style={{height: '75px'}}>
-            <Container>
-                <Navbar.Brand as={isLoggedIn ? Link : 'div'} to={isLoggedIn ? '/home' : '#'}>
-                    <div className='d-flex align-items-center'>
-                        <img
-                            alt='icon'
-                            src='/img/cardz-icon.png'
-                            width='50'
-                            height='50'
-                            className='d-inline-block align-center'
-                        />
-                        Cardz
-                    </div>
-                </Navbar.Brand>
+        <>
+            <style>
+                {`
+                    .search-container {
+                        flex: 1;
+                        margin-left: 0;
+                    }
+                    @media (min-width: 768px) {
+                        .search-container {
+                            margin-left: 100px;
+                        }
+                    }
+                `}
+            </style>
+            <Navbar expand='md' bg='primary' variant='dark' sticky="top" style={{minHeight: '75px'}}>
+                <Container>
+                    <Navbar.Brand as={isLoggedIn ? Link : 'div'} to={isLoggedIn ? '/home' : '#'}>
+                        <div className='d-flex align-items-center'>
+                            <img
+                                alt='icon'
+                                src='/img/cardz-icon.png'
+                                width='50'
+                                height='50'
+                                className='d-inline-block align-center'
+                            />
+                            Cardz
+                        </div>
+                    </Navbar.Brand>
 
-                <Navbar.Toggle aria-controls='header-navbar' />
-                <Navbar.Collapse id='header-navbar'>
-                    <div
-                        style={{
-                            flex: 1,
-                            display: 'flex',
-                            justifyContent: 'center',
-                            marginLeft: '100px',
-                        }}
-                    >
-                        {isLoggedIn && (
-                            <Form inline onSubmit={handleSearch}>
-                                <InputGroup>
-                                    <Form.Control
-                                        type='Text'
-                                        placeholder='Search'
-                                        value={searchQuery}
-                                        onChange={handleSearchChange}
-                                    />
-                                    <InputGroup.Text>
-                                        <Button
-                                            variant='primary'
-                                            type='submit'
-                                            className='d-flex'
-                                        >
-                                            <BsSearch />
-                                        </Button>
-                                    </InputGroup.Text>
-                                </InputGroup>
-                            </Form>
-                        )}
-                    </div>
-
-                    <Nav className='ml-auto'>
-                        {isLoggedIn && (
-                            <>
-                                <Nav.Link className='mx-1' as={Link} to='/home'>Home</Nav.Link>
-                                <Nav.Link className='mx-1' as={Link} to='/myprofile'>Profile</Nav.Link>
-                            </>
-                        )}
-                        {isLoggedIn ? (
-                            <NavDropdown
-                                className='ms-1'
-                                title={
-                                    <>
-                                        <img
-                                            src={avatarImage}
-                                            alt="User avatar"
-                                            style={{
-                                                width: '25px',
-                                                height: '25px',
-                                                borderRadius: '50%',
-                                                marginRight: '8px',
-                                                objectFit: 'cover',
-                                                border: '1px solid white'
-                                            }}
+                    <Navbar.Toggle aria-controls='header-navbar'/>
+                    <Navbar.Collapse id='header-navbar'>
+                        <div className="d-flex justify-content-center search-container">
+                            {isLoggedIn && (
+                                <Form inline onSubmit={handleSearch}>
+                                    <InputGroup>
+                                        <Form.Control
+                                            type='Text'
+                                            placeholder='Search'
+                                            value={searchQuery}
+                                            onChange={handleSearchChange}
                                         />
-                                        <span>{`${user}`}</span>
-                                    </>
-                                }
-                                id='header-dropdown'
-                                drop='down'
-                                align='end'
-                            >
-                                <NavDropdown.Item onClick={handleCardzModalOpen}>Settings</NavDropdown.Item>
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item onClick={handleFollowingListInOffcanvasOpen}>Following User</NavDropdown.Item>
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item onClick={handleLogOut}>Log Out</NavDropdown.Item>
-                            </NavDropdown>
-                        ) : (
-                            <Navbar.Text className='ms-2' >Guest</Navbar.Text>
-                        )}
-                    </Nav>
+                                        <InputGroup.Text>
+                                            <Button
+                                                variant='primary'
+                                                type='submit'
+                                                className='d-flex'
+                                            >
+                                                <BsSearch/>
+                                            </Button>
+                                        </InputGroup.Text>
+                                    </InputGroup>
+                                </Form>
+                            )}
+                        </div>
 
-                </Navbar.Collapse>
-            </Container>
-            <SettingModal
-                show={showSettingModal}
-                handleClose={handleCardzModalClose}
-            />
-            <FollowingListInOffcanvas
-                show={showFollowingListInOffcanvas}
-                handleClose={handleFollowingListInOffcanvasClose}
-            />
-        </Navbar>
+                        <Nav className='ml-auto'>
+                        {isLoggedIn && (
+                                <>
+                                    <Nav.Link className='mx-1' as={Link} to='/home'>Home</Nav.Link>
+                                    <Nav.Link className='mx-1' as={Link} to='/myprofile'>Profile</Nav.Link>
+                                </>
+                            )}
+                            {isLoggedIn ? (
+                                <NavDropdown
+                                    className='ms-1'
+                                    title={
+                                        <>
+                                            <img
+                                                src={avatarImage}
+                                                alt="User avatar"
+                                                style={{
+                                                    width: '25px',
+                                                    height: '25px',
+                                                    borderRadius: '50%',
+                                                    marginRight: '8px',
+                                                    objectFit: 'cover',
+                                                    border: '1px solid white'
+                                                }}
+                                            />
+                                            <span>{`${user}`}</span>
+                                        </>
+                                    }
+                                    id='header-dropdown'
+                                    drop='down'
+                                    align='end'
+                                >
+                                    <NavDropdown.Item onClick={handleCardzModalOpen}>Settings</NavDropdown.Item>
+                                    <NavDropdown.Divider/>
+                                    <NavDropdown.Item onClick={handleFollowingListInOffcanvasOpen}>Following
+                                        User</NavDropdown.Item>
+                                    <NavDropdown.Divider/>
+                                    <NavDropdown.Item onClick={handleLogOut}>Log Out</NavDropdown.Item>
+                                </NavDropdown>
+                            ) : (
+                                <Navbar.Text className='ms-2'>Guest</Navbar.Text>
+                            )}
+                        </Nav>
+
+                    </Navbar.Collapse>
+                </Container>
+                <SettingModal
+                    show={showSettingModal}
+                    handleClose={handleCardzModalClose}
+                />
+                <FollowingListInOffcanvas
+                    show={showFollowingListInOffcanvas}
+                    handleClose={handleFollowingListInOffcanvasClose}
+                />
+            </Navbar>
+        </>
     );
 }
 

@@ -25,7 +25,7 @@ const HomePage = () => {
                              style={{
                                  borderLeft: '2px solid #c9f5ff',
                                  borderRight: '1px solid #c9f5ff',
-                                 height: 'calc(100vh - 75px)',
+                                 height: 'calc(100vh - 76px)',
                                  overflowY: 'auto'
                              }}
                         >
@@ -38,7 +38,7 @@ const HomePage = () => {
                              style={{
                                  borderLeft: '1px solid #c9f5ff',
                                  borderRight: '2px solid #c9f5ff',
-                                 height: 'calc(100vh - 75px)',
+                                 height: 'calc(100vh - 76px)',
                                  overflowY: 'auto'
                              }}
                         >

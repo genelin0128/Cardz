@@ -17,7 +17,7 @@ const MyProfilePage = () => {
         <div>
             <Header />
             {isLoggedIn === true ? (
-                <div style={{height: 'calc(100vh - 75px)', overflowY: 'auto'}}>
+                <div style={{height: 'calc(100vh - 76px)', overflowY: 'auto'}}>
                     <Container>
                         <Row>
                             <Profile />

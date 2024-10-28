@@ -32,7 +32,7 @@ root.render(
                   <Route exact path='/home' element={<HomePage />} />
                   <Route exact path='/myprofile' element={<MyProfilePage />} />
                   <Route exact path='/profile' element={<ProfilePage />} />
-                  <Route exact path='/' element={<SearchResultsPage />} />
+                  <Route exact path='/searchresults' element={<SearchResultsPage />} />
                   <Route exact path='*' element={<NotFoundPage />} />
               </Routes>
           </Router>

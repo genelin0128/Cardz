@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 5500;
-const databaseUrl = process.env.MONGODB_URI || 'mongodb+srv://cl222:cl222@cluster0.09egy.mongodb.net/COMP531?retryWrites=true&w=majority&appName=Cluster0';
+const databaseUrl = process.env.MONGODB_URI;
 
 app.use(cors({
     origin: process.env.CORS_ORIGIN,
